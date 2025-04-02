@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#003771"
+    tools:context=".UI.LoginActivity">
+
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ola_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/judson"
+        android:text="Olá!"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_img" />
+
+    <TextView
+        android:id="@+id/entrar_na_conta_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/judson"
+        android:text="Entrar na conta"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ola_tv" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgroundEmailField"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="@id/entrar_na_conta_tv"
+        app:layout_constraintStart_toStartOf="@+id/entrar_na_conta_tv"
+        app:layout_constraintTop_toBottomOf="@id/entrar_na_conta_tv">
+
+        <ImageView
+            android:id="@+id/email_logo_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Email logo"
+            android:src="@drawable/mail_24px"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundEmailField"
+            app:layout_constraintStart_toStartOf="@id/backgroundEmailField"
+            app:layout_constraintTop_toTopOf="@id/backgroundEmailField"
+            app:tint="@color/black" />
+
+        <EditText
+            android:id="@+id/email_ED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/judson"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundEmailField"
+            app:layout_constraintStart_toEndOf="@id/email_logo_img"
+            app:layout_constraintTop_toTopOf="@id/backgroundEmailField" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgroundPasswordField"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="@id/backgroundEmailField"
+        app:layout_constraintStart_toStartOf="@+id/backgroundEmailField"
+        app:layout_constraintTop_toBottomOf="@id/backgroundEmailField">
+
+        <ImageView
+            android:id="@+id/password_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="padlock logo"
+            android:src="@drawable/lock_24px"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundPasswordField"
+            app:layout_constraintStart_toStartOf="@id/backgroundPasswordField"
+            app:layout_constraintTop_toTopOf="@id/backgroundPasswordField"
+            app:tint="@color/black" />
+
+        <EditText
+            android:id="@+id/password_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/judson"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundPasswordField"
+            app:layout_constraintStart_toEndOf="@id/password_img"
+            app:layout_constraintTop_toTopOf="@id/backgroundPasswordField" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/esqueci_minha_senha_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/judson"
+        android:text="Esqueci minha senha"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backgroundPasswordField" />
+
+    <TextView
+        android:id="@+id/cadastrar_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/judson"
+        android:text="Cadastre-se"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/esqueci_minha_senha_TV" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/confirm_btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edit_text_background"
+        android:backgroundTint="#FF8532"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/backgroundPasswordField"
+        app:layout_constraintStart_toStartOf="@id/backgroundPasswordField"
+        app:layout_constraintTop_toBottomOf="@id/backgroundPasswordField">
+
+        <TextView
+            android:id="@+id/confirmar_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/judson"
+            android:text="Confirmar"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/confirm_btn"
+            app:layout_constraintEnd_toEndOf="@id/confirm_btn"
+            app:layout_constraintStart_toStartOf="@id/confirm_btn"
+            app:layout_constraintTop_toTopOf="@id/confirm_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
