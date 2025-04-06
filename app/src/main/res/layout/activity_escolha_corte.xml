@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.EscolhaCorteActivity">
+
+    <ImageView
+        android:id="@+id/barbearia_IV"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginTop="-20dp"
+        android:contentDescription="Imagem da barbearia"
+        android:src="@drawable/Barbearia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/servicos_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/judson"
+        android:text="Serviços"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barbearia_IV" />
+
+    <TextView
+        android:id="@+id/avaliacoes_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/judson"
+        android:text="Avaliação"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barbearia_IV" />
+
+    <TextView
+        android:id="@+id/detalhes_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/judson"
+        android:text="Detalhes"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barbearia_IV" />
+
+    <ImageView
+        android:id="@+id/fundo_rosa_IV"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFE8F0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/servicos_TV" />
+
+    <TextView
+        android:id="@+id/corte_do_jaca_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/judson"
+        android:text="Corte Do jaca"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fundo_rosa_IV" />
+
+    <TextView
+        android:id="@+id/tempo_jaca_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/judson"
+        android:text="30 min"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/corte_do_jaca_TV"
+        app:layout_constraintTop_toBottomOf="@id/corte_do_jaca_TV" />
+
+    <TextView
+        android:id="@+id/preco_jaca_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="R$ 25,00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/corte_do_jaca_TV"
+        android:textSize="22dp"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Reservar"
+        android:backgroundTint="#FF8532"
+        android:shadowRadius="5"
+        app:layout_constraintTop_toTopOf="@id/corte_do_jaca_TV"
+        app:layout_constraintEnd_toEndOf="@id/detalhes_TV"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
