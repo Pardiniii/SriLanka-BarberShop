@@ -22,12 +22,12 @@
         android:id="@+id/servicos_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/judson"
         android:text="Serviços"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barbearia_IV" />
@@ -39,7 +39,7 @@
         android:fontFamily="@font/judson"
         android:text="Avaliação"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/servicos_TV" />
@@ -48,11 +48,11 @@
         android:id="@+id/detalhes_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         android:fontFamily="@font/judson"
         android:text="Detalhes"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/servicos_TV" />
 
@@ -73,12 +73,12 @@
         android:id="@+id/corte_do_jaca_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/judson"
         android:text="Corte do jaca"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/fundo_rosa_IV" />
 
@@ -89,7 +89,7 @@
         android:fontFamily="@font/judson"
         android:text="30 min"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@id/corte_do_jaca_TV"
         app:layout_constraintTop_toBottomOf="@id/corte_do_jaca_TV" />
 
@@ -100,7 +100,7 @@
         android:fontFamily="@font/judson"
         android:text="R$ 25,00"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@id/tempo_jaca_TV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,7 +127,7 @@
         android:fontFamily="@font/judson"
         android:text="Corte do zeca"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@id/corte_do_jaca_TV"
         app:layout_constraintTop_toBottomOf="@id/tempo_jaca_TV" />
 
@@ -138,7 +138,7 @@
         android:fontFamily="@font/judson"
         android:text="30 min"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@id/corte_do_zeca_TV"
         app:layout_constraintTop_toBottomOf="@id/corte_do_zeca_TV" />
 
@@ -149,7 +149,7 @@
         android:fontFamily="@font/judson"
         android:text="R$ 30,00"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@id/tempo_zeca_TV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -176,7 +176,7 @@
         android:fontFamily="@font/judson"
         android:text="Calvão de cria"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@id/corte_do_zeca_TV"
         app:layout_constraintTop_toBottomOf="@id/tempo_zeca_TV" />
 
@@ -187,7 +187,7 @@
         android:fontFamily="@font/judson"
         android:text="30 min"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@id/calvao_de_cria_TV"
         app:layout_constraintTop_toBottomOf="@id/calvao_de_cria_TV" />
 
@@ -198,7 +198,7 @@
         android:fontFamily="@font/judson"
         android:text="R$ 44,99"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@id/tempo_calvao_TV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -225,7 +225,7 @@
         android:fontFamily="@font/judson"
         android:text="Nevou"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@id/calvao_de_cria_TV"
         app:layout_constraintTop_toBottomOf="@id/tempo_calvao_TV" />
 
@@ -236,7 +236,7 @@
         android:fontFamily="@font/judson"
         android:text="1h30 min"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="@id/nevou_TV"
         app:layout_constraintTop_toBottomOf="@id/nevou_TV" />
 
@@ -247,7 +247,7 @@
         android:fontFamily="@font/judson"
         android:text="R$ 100,00"
         android:textColor="@color/black"
-        android:textSize="22dp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@id/tempo_nevou_TV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

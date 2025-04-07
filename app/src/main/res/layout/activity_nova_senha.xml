@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="50dp"
         android:textColor="@color/white"
-        android:textSize="34dp"
+        android:textSize="34sp"
         android:fontFamily="@font/judson"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -124,7 +124,7 @@
             android:fontFamily="@font/judson"
             android:text="Confirmar"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@id/confirm_btn"
             app:layout_constraintEnd_toEndOf="@id/confirm_btn"
             app:layout_constraintStart_toStartOf="@id/confirm_btn"
