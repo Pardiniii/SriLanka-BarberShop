@@ -13,7 +13,7 @@
         android:layout_height="300dp"
         android:layout_marginTop="-20dp"
         android:contentDescription="Imagem da barbearia"
-        android:src="@drawable/Barbearia"
+        android:src="@drawable/barbearia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,21 +57,24 @@
     <ImageView
         android:id="@+id/fundo_rosa_IV"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
         android:background="#FFE8F0"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/servicos_TV" />
+        app:layout_constraintTop_toBottomOf="@id/servicos_TV"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/corte_do_jaca_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="@font/judson"
-        android:text="Corte Do jaca"
+        android:text="Corte do jaca"
         android:textColor="@color/black"
         android:textSize="22dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,8 +86,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/judson"
         android:text="30 min"
-        android:textSize="22dp"
         android:textColor="@color/black"
+        android:textSize="22dp"
         app:layout_constraintStart_toStartOf="@id/corte_do_jaca_TV"
         app:layout_constraintTop_toBottomOf="@id/corte_do_jaca_TV" />
 
@@ -92,24 +95,166 @@
         android:id="@+id/preco_jaca_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         android:text="R$ 25,00"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/corte_do_jaca_TV"
+        android:textColor="@color/black"
         android:textSize="22dp"
-        android:textColor="@color/black"/>
+        app:layout_constraintBottom_toBottomOf="@id/tempo_jaca_TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/corte_do_jaca_TV" />
 
     <Button
+        android:id="@+id/reservar_jaca_BTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="Reservar"
         android:backgroundTint="#FF8532"
         android:shadowRadius="5"
-        app:layout_constraintTop_toTopOf="@id/corte_do_jaca_TV"
-        app:layout_constraintEnd_toEndOf="@id/detalhes_TV"/>
+        android:text="Reservar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/tempo_jaca_TV"
+        app:layout_constraintEnd_toEndOf="@id/detalhes_TV"
+        app:layout_constraintTop_toTopOf="@id/corte_do_jaca_TV" />
 
+    <TextView
+        android:id="@+id/corte_do_zeca_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/judson"
+        android:text="Corte do zeca"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="@id/corte_do_jaca_TV"
+        app:layout_constraintTop_toBottomOf="@id/tempo_jaca_TV" />
 
+    <TextView
+        android:id="@+id/tempo_zeca_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/judson"
+        android:text="30 min"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="@id/corte_do_zeca_TV"
+        app:layout_constraintTop_toBottomOf="@id/corte_do_zeca_TV" />
+
+    <TextView
+        android:id="@+id/preco_zeca_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 30,00"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@id/tempo_zeca_TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/corte_do_zeca_TV" />
+
+    <Button
+        android:id="@+id/reservar_zeca_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF8532"
+        android:shadowRadius="5"
+        android:text="Reservar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/tempo_zeca_TV"
+        app:layout_constraintEnd_toEndOf="@id/detalhes_TV"
+        app:layout_constraintTop_toTopOf="@id/corte_do_zeca_TV" />
+
+    <TextView
+        android:id="@+id/calvao_de_cria_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/judson"
+        android:text="Calvão de cria"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="@id/corte_do_zeca_TV"
+        app:layout_constraintTop_toBottomOf="@id/tempo_zeca_TV" />
+
+    <TextView
+        android:id="@+id/tempo_calvao_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/judson"
+        android:text="30 min"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="@id/calvao_de_cria_TV"
+        app:layout_constraintTop_toBottomOf="@id/calvao_de_cria_TV" />
+
+    <TextView
+        android:id="@+id/preco_calvao_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 44,99"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@id/tempo_calvao_TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/calvao_de_cria_TV" />
+
+    <Button
+        android:id="@+id/reservar_calvao_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF8532"
+        android:shadowRadius="5"
+        android:text="Reservar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/tempo_calvao_TV"
+        app:layout_constraintEnd_toEndOf="@id/detalhes_TV"
+        app:layout_constraintTop_toTopOf="@id/calvao_de_cria_TV" />
+
+    <TextView
+        android:id="@+id/nevou_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/judson"
+        android:text="Nevou"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="@id/calvao_de_cria_TV"
+        app:layout_constraintTop_toBottomOf="@id/tempo_calvao_TV" />
+
+    <TextView
+        android:id="@+id/tempo_nevou_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/judson"
+        android:text="1h30 min"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="@id/nevou_TV"
+        app:layout_constraintTop_toBottomOf="@id/nevou_TV" />
+
+    <TextView
+        android:id="@+id/preco_nevou_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 100,00"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@id/tempo_nevou_TV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/nevou_TV" />
+
+    <Button
+        android:id="@+id/reservar_nevou_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF8532"
+        android:shadowRadius="5"
+        android:text="Reservar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/tempo_nevou_TV"
+        app:layout_constraintEnd_toEndOf="@id/detalhes_TV"
+        app:layout_constraintTop_toTopOf="@id/nevou_TV" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

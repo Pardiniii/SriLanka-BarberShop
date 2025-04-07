@@ -32,6 +32,12 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val btnLogin = binding.confirmBtn
+        btnLogin.setOnClickListener {
+            val intent = Intent(this, EscolhaCorteActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }
