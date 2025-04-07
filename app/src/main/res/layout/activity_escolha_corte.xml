@@ -11,7 +11,7 @@
         android:id="@+id/barbearia_IV"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
-        android:layout_marginTop="-20dp"
+        android:scaleType="centerCrop"
         android:contentDescription="Imagem da barbearia"
         android:src="@drawable/barbearia"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:fontFamily="@font/judson"
+        android:layout_marginTop="15dp"
         android:text="Serviços"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="22dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +42,7 @@
         android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barbearia_IV" />
+        app:layout_constraintTop_toTopOf="@id/servicos_TV" />
 
     <TextView
         android:id="@+id/detalhes_TV"
@@ -52,13 +54,13 @@
         android:textColor="@color/black"
         android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barbearia_IV" />
+        app:layout_constraintTop_toTopOf="@id/servicos_TV" />
 
     <ImageView
         android:id="@+id/fundo_rosa_IV"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="15dp"
         android:background="#FFE8F0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
