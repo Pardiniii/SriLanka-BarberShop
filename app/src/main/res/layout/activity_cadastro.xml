@@ -168,7 +168,7 @@
             app:tint="@color/black" />
 
         <EditText
-            android:id="@+id/confirm_new_password_ET"
+            android:id="@+id/confirm_password_ET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -181,6 +181,17 @@
             app:layout_constraintTop_toTopOf="@id/backgroundConfirmPasswordField" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/resposta_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/backgroundConfirmPasswordField"
+        app:layout_constraintEnd_toEndOf="@id/backgroundConfirmPasswordField"
+        tools:text="Texto teste"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/backgroundConfirmPasswordField"
+        android:layout_marginTop="35dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/confirm_btn"
