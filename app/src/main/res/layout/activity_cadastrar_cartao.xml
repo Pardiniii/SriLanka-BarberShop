@@ -129,21 +129,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="32dp" />
 
-
-    <Button
-        android:id="@+id/botaoCadastro"
-        android:layout_width="0dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="32dp"
-        android:text="Cadastrar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cadastrar"
         android:background="@drawable/edit_botao"
-        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/input_expira"
+        app:layout_constraintTop_toBottomOf="@id/input_expira"
+        android:layout_height="52dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="@id/input_cvv"
+        android:layout_marginTop="42dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        app:layout_constraintStart_toStartOf="@id/cadastrar"
+        app:layout_constraintEnd_toEndOf="@id/cadastrar"
+        app:layout_constraintTop_toTopOf="@id/cadastrar"
         android:fontFamily="@font/judson"
-        app:layout_constraintTop_toBottomOf="@id/input_cvv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp" />
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/cadastrar"
+        android:textColor="@color/black"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
