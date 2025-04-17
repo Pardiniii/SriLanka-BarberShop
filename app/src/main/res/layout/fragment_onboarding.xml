@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#003771"
+    tools:context=".ui.onboarding.OnboardingFragment">
+
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/criar_conta_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/judson"
+        android:text="Criar conta"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_img" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgroundNameField"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/criar_conta_tv">
+
+        <ImageView
+            android:id="@+id/user_logo_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="User logo"
+            android:src="@drawable/person_24px"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundNameField"
+            app:layout_constraintStart_toStartOf="@id/backgroundNameField"
+            app:layout_constraintTop_toTopOf="@id/backgroundNameField"
+            app:tint="@color/black" />
+
+        <EditText
+            android:id="@+id/nome_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/judson"
+            android:hint="Nome"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundNameField"
+            app:layout_constraintStart_toEndOf="@id/user_logo_img"
+            app:layout_constraintTop_toTopOf="@id/backgroundNameField" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgroundEmailField"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundNameField"
+        app:layout_constraintStart_toStartOf="@+id/backgroundNameField"
+        app:layout_constraintTop_toBottomOf="@id/backgroundNameField">
+
+        <ImageView
+            android:id="@+id/email_logo_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="mail logo"
+            android:src="@drawable/mail_24px"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundEmailField"
+            app:layout_constraintStart_toStartOf="@id/backgroundEmailField"
+            app:layout_constraintTop_toTopOf="@id/backgroundEmailField"
+            app:tint="@color/black" />
+
+        <EditText
+            android:id="@+id/email_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/judson"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundEmailField"
+            app:layout_constraintStart_toEndOf="@id/email_logo_img"
+            app:layout_constraintTop_toTopOf="@id/backgroundEmailField" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgroundPasswordField"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundEmailField"
+        app:layout_constraintStart_toStartOf="@+id/backgroundEmailField"
+        app:layout_constraintTop_toBottomOf="@id/backgroundEmailField">
+
+        <ImageView
+            android:id="@+id/cadastro_password_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="password logo"
+            android:src="@drawable/lock_24px"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundPasswordField"
+            app:layout_constraintStart_toStartOf="@id/backgroundPasswordField"
+            app:layout_constraintTop_toTopOf="@id/backgroundPasswordField"
+            app:tint="@color/black" />
+
+        <EditText
+            android:id="@+id/password_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/judson"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundPasswordField"
+            app:layout_constraintStart_toEndOf="@id/cadastro_password_img"
+            app:layout_constraintTop_toTopOf="@id/backgroundPasswordField" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgroundConfirmPasswordField"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backgroundPasswordField"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+
+        <ImageView
+            android:id="@+id/confirm_new_password_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="password logo"
+            android:src="@drawable/lock_24px"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundConfirmPasswordField"
+            app:layout_constraintStart_toStartOf="@id/backgroundConfirmPasswordField"
+            app:layout_constraintTop_toTopOf="@id/backgroundConfirmPasswordField"
+            app:tint="@color/black" />
+
+        <EditText
+            android:id="@+id/confirm_password_ET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/judson"
+            android:inputType="textPassword"
+            android:hint="Confirmar senha"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundConfirmPasswordField"
+            app:layout_constraintStart_toEndOf="@id/confirm_new_password_img"
+            app:layout_constraintTop_toTopOf="@id/backgroundConfirmPasswordField" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/resposta_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/backgroundConfirmPasswordField"
+        app:layout_constraintEnd_toEndOf="@id/backgroundConfirmPasswordField"
+        tools:text="Texto teste"
+        android:textColor="@color/white"
+        android:fontFamily="@font/judson"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/backgroundConfirmPasswordField"
+        android:layout_marginTop="35dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/confirm_btn"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="@drawable/edit_text_background"
+        android:backgroundTint="#FF8532"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/backgroundPasswordField"
+        app:layout_constraintStart_toStartOf="@id/backgroundPasswordField"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundConfirmPasswordField">
+
+        <TextView
+            android:id="@+id/confirm_tv_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/judson"
+            android:text="Confirmar"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/confirm_btn"
+            app:layout_constraintEnd_toEndOf="@id/confirm_btn"
+            app:layout_constraintStart_toStartOf="@id/confirm_btn"
+            app:layout_constraintTop_toTopOf="@id/confirm_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
