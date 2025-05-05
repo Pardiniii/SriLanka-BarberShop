@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:src="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/tela_avaliacao_servicos_TV"
@@ -24,10 +24,10 @@
         android:text="Serviços"
         android:textColor="@color/black"
         android:textSize="22sp"
+        android:fontFamily="@font/judson"
         app:layout_constraintBottom_toBottomOf="@id/background_top_IV"
         app:layout_constraintStart_toStartOf="@id/background_top_IV"
-        app:layout_constraintTop_toTopOf="@id/background_top_IV"
-        android:fontFamily="@font/judson"/>
+        app:layout_constraintTop_toTopOf="@id/background_top_IV" />
 
     <TextView
         android:id="@+id/tela_avaliacao_avaliacoes_TV"
@@ -36,12 +36,12 @@
         android:text="Avaliações"
         android:textColor="@color/black"
         android:textSize="22sp"
+        android:textStyle="bold"
         android:fontFamily="@font/judson"
-        app:layout_constraintStart_toStartOf="@id/background_top_IV"
-        app:layout_constraintEnd_toEndOf="@id/background_top_IV"
-        app:layout_constraintTop_toTopOf="@id/background_top_IV"
         app:layout_constraintBottom_toBottomOf="@id/background_top_IV"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="@id/background_top_IV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/tela_avaliacao_detalhes"
@@ -51,22 +51,151 @@
         android:textColor="@color/black"
         android:fontFamily="@font/judson"
         android:textSize="22sp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="@id/background_top_IV"
         app:layout_constraintTop_toTopOf="@id/background_top_IV"
-        app:layout_constraintBottom_toBottomOf="@id/background_top_IV"
-        android:layout_marginEnd="10dp"/>
+        app:layout_constraintBottom_toBottomOf="@id/background_top_IV" />
 
     <TextView
         android:id="@+id/nota_avaliacao_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5,0"
-        android:textSize="33sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/background_top_IV"
-        android:layout_marginTop="24dp"
+        android:text="Comentários"
+        android:textSize="30sp"
         android:textColor="@color/black"
         android:fontFamily="@font/judson"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/background_top_IV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/aviso_verificacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nós do SriLanka BarberShop garantimos que as avaliações foram feitas por usuários verificados."
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/nota_avaliacao_TV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp" />
+
+
+    <TextView
+        android:id="@+id/nome_usuario1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gabriel"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/aviso_verificacao"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="21dp" />
+
+    <RatingBar
+        android:id="@+id/estrelas_usuario1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="5"
+        android:stepSize="0.5"
+        android:isIndicator="true"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        app:layout_constraintTop_toBottomOf="@id/nome_usuario1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="21dp" />
+
+    <TextView
+        android:id="@+id/avaliacao1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Simplesmente sensacional! O atendimento na SriLanka BarberShop é de primeira, os barbeiros são muito profissionais e ainda rola aquele papo bom enquanto você corta o cabelo. Ambiente limpo, confortável e com uma vibe super agradável. Recomendo demais!"
+        app:layout_constraintTop_toBottomOf="@id/estrelas_usuario1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="8dp" />
+
+
+    <TextView
+        android:id="@+id/nome_usuario2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bruno"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/avaliacao1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="21dp" />
+
+    <RatingBar
+        android:id="@+id/estrelas_usuario2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="4.5"
+        android:stepSize="0.5"
+        android:isIndicator="true"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        app:layout_constraintTop_toBottomOf="@id/nome_usuario2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="21dp" />
+
+    <TextView
+        android:id="@+id/avaliacao2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Fiquei extremamente satisfeito com o serviço prestado na SriLanka BarberShop. Profissionais qualificados, pontuais e cuidadosos com cada detalhe do corte. O espaço é bem estruturado, com ótimo atendimento e preços justos. Uma barbearia que realmente valoriza o cliente."
+        app:layout_constraintTop_toBottomOf="@id/estrelas_usuario2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="8dp" />
+
+
+    <TextView
+        android:id="@+id/nome_usuario3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vinicius"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/avaliacao2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="21dp" />
+
+    <RatingBar
+        android:id="@+id/estrelas_usuario3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="5"
+        android:stepSize="0.5"
+        android:isIndicator="true"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        app:layout_constraintTop_toBottomOf="@id/nome_usuario3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="21dp" />
+
+    <TextView
+        android:id="@+id/avaliacao3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Top demais! Corte impecável, cabelo alinhado e atendimento nota 10. Quem vai uma vez, volta sempre!"
+        app:layout_constraintTop_toBottomOf="@id/estrelas_usuario3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="21dp"
+        android:layout_marginTop="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

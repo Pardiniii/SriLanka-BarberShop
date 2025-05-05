@@ -9,15 +9,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.srilankabarbershop.R
 
-class AvaliacaoActivity : AppCompatActivity() {
+class DetalhesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_avaliacao)
-        val detalhesTV = findViewById<TextView>(R.id.tela_avaliacao_detalhes)
+        setContentView(R.layout.activity_detalhes)
 
-        detalhesTV.setOnClickListener {
-            val intent = Intent(this, DetalhesActivity::class.java)
+        val avaliacoesTV = findViewById<TextView>(R.id.tela_avaliacao_avaliacoes_TV)
+
+        avaliacoesTV.setOnClickListener {
+            val intent = Intent(this, AvaliacaoActivity::class.java)
             startActivity(intent)
         }
     }
