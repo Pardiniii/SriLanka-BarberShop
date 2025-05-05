@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.DetalhesActivity">
+
+
+    <ImageView
+        android:id="@+id/background_top_IV"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tela_avaliacao_servicos_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Serviços"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:fontFamily="@font/judson"
+        app:layout_constraintBottom_toBottomOf="@id/background_top_IV"
+        app:layout_constraintStart_toStartOf="@id/background_top_IV"
+        app:layout_constraintTop_toTopOf="@id/background_top_IV" />
+
+    <TextView
+        android:id="@+id/tela_avaliacao_avaliacoes_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Avaliações"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:fontFamily="@font/judson"
+        app:layout_constraintBottom_toBottomOf="@id/background_top_IV"
+        app:layout_constraintTop_toTopOf="@id/background_top_IV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tela_avaliacao_detalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detalhes"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:fontFamily="@font/judson"
+        android:textStyle="bold"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="@id/background_top_IV"
+        app:layout_constraintTop_toTopOf="@id/background_top_IV"
+        app:layout_constraintBottom_toBottomOf="@id/background_top_IV" />
+
+
+    <TextView
+        android:id="@+id/titulo_localizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Localização"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/background_top_IV"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/texto_localizacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Av. Eng. Eusébio Stevaux, 823 - Santo Amaro, São Paulo - SP, 04696-000"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/titulo_localizacao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/titulo_sobre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobre Nós"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/texto_localizacao"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/texto_sobre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="A SriLanka BarberShop foi inaugurada em janeiro de 2025 com a missão de oferecer cortes de cabelo masculinos com qualidade, estilo e atenção aos detalhes. Cada corte é feito com técnica, cuidado e pensando na personalidade de cada cliente.\n\nNosso ambiente foi projetado para ser acolhedor e moderno, onde você pode relaxar enquanto cuida do visual. Utilizamos ferramentas profissionais e seguimos as tendências mais atuais para garantir que você saia com o corte perfeito — do clássico ao mais ousado.\n\nNa SriLanka, cortar o cabelo vai muito além do básico: é uma experiência completa de autoestima e confiança.\nAgende seu horário e sinta a diferença!"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/titulo_sobre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/titulo_telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone de contato:"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/texto_sobre"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/texto_telefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(11) 5682-7300"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/titulo_telefone"
+        app:layout_constraintStart_toEndOf="@id/titulo_telefone"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/titulo_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horário de funcionamento"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/titulo_telefone"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/texto_horario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Terça - Sexta 13:00 às 20:00 e Sábado - Domingo 9:00 às 12:00"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/titulo_horario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
