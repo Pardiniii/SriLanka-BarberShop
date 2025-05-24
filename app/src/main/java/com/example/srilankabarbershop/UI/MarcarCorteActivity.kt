@@ -6,12 +6,28 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.srilankabarbershop.R
+import com.example.srilankabarbershop.databinding.ActivityMarcarCorteBinding
 
 class MarcarCorteActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityMarcarCorteBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding = ActivityMarcarCorteBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_marcar_corte)
+        setContentView(binding.root)
+        supportActionBar?.hide()
+
+        val calendario = binding.calendario
+        calendario.setOnDateChangeListener { _, year, month, day ->
+            val dataSelecionada = ("%02d".format(day) + "/"
+                    + "%02d".format((month + 1)) + "/"
+                    + year)
+            val dataCorte = binding.dataCorteTV
+            dataCorte.text = dataSelecionada
+        }
 
 
     }

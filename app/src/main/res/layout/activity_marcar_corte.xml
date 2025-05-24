@@ -13,7 +13,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="80dp"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/background_infos"
@@ -27,6 +29,76 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintTop_toBottomOf="@id/calendario">
+
+        <TextView
+            android:id="@+id/corte_atual_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Corte atual"
+            android:textColor="@color/black"
+            android:fontFamily="@font/judson"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/valor_corte_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R$ valor"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/judson"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"/>
+
+        <TextView
+            android:id="@+id/data_corte_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Data"
+            android:textSize="24sp"
+            android:fontFamily="@font/judson"
+            app:layout_constraintTop_toBottomOf="@id/valor_corte_TV"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/confirma_corte_btn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_background"
+            android:backgroundTint="#FF8532"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="30dp"
+            >
+
+            <TextView
+                android:id="@+id/confirmar_corte_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/judson"
+                android:text="Confirmar"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/confirma_corte_btn"
+                app:layout_constraintEnd_toEndOf="@id/confirma_corte_btn"
+                app:layout_constraintStart_toStartOf="@id/confirma_corte_btn"
+                app:layout_constraintTop_toTopOf="@id/confirma_corte_btn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
         
 
     </androidx.constraintlayout.widget.ConstraintLayout>
