@@ -2,6 +2,7 @@ package com.example.srilankabarbershop.UI
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -36,9 +37,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
         val btnLogin = binding.confirmBtn
+
         btnLogin.setOnClickListener {
-            val email = binding.emailEditText.text.toString()
-            val senha = binding.senhaEditText.text.toString()
+            val email = binding.emailED.text.toString()
+            val senha = binding.passwordET.text.toString()
 
             val request = LoginRequest(email, senha)
 
@@ -52,11 +54,14 @@ class LoginActivity : AppCompatActivity() {
                         startActivity(intent)
                     } else {
                         Toast.makeText(this@LoginActivity, "Email ou senha inválidos!", Toast.LENGTH_SHORT).show()
+                        Log.d("LOGIN_DEBUG", "Código: ${response.code()} | Body: ${response.body()} | Error: ${response.errorBody()?.string()}")
+
                     }
                 }
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(this@LoginActivity, "Erro de rede: ${t.message}", Toast.LENGTH_LONG).show()
+                    Log.i("FALHA", "onFailure: Erro de rede: ${t.message}")
                 }
             })
         }
