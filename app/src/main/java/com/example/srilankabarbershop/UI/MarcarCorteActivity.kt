@@ -21,6 +21,14 @@ class MarcarCorteActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         val calendario = binding.calendario
+        val corteEscolhido = binding.corteAtualTV
+
+        intent?.let {
+            val corteRecebido = intent.getStringExtra("CHAVE")
+            corteEscolhido.text = corteRecebido
+        }
+
+
         calendario.setOnDateChangeListener { _, year, month, day ->
             val dataSelecionada = ("%02d".format(day) + "/"
                     + "%02d".format((month + 1)) + "/"
