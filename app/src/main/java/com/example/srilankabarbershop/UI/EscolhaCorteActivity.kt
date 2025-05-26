@@ -49,5 +49,16 @@ class EscolhaCorteActivity : AppCompatActivity() {
             intent.putExtra("CHAVE", "Nevou")
             startActivity(intent)
         }
+
+        binding.avaliacoesTV.setOnClickListener {
+            val intent = Intent(this, AvaliacaoActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.detalhesTV.setOnClickListener {
+            val intent = Intent(this, DetalhesActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
