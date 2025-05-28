@@ -18,4 +18,10 @@ interface ApiService {
     @POST("/auth/registrar")
     fun registrar(@Body request: RegisterRequest): Call<RegisterResponse>
 
+    @POST("/recuperar-senha")
+    fun recuperarSenha(@Body request: RecuperarSenhaRequest): Call<String>
+
+    @POST("/redefinir-senha")
+    fun redefinirSenha(@Body request: RedefinirSenhaRequest): Call<String>
+
 }
