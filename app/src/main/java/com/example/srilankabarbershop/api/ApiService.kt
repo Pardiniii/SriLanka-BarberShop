@@ -24,4 +24,33 @@ interface ApiService {
     @POST("/redefinir-senha")
     fun redefinirSenha(@Body request: RedefinirSenhaRequest): Call<String>
 
+    @POST("/estabelecimentos")
+    fun criarEstabelecimento(
+        @Body request: EstabelecimentoRequest,
+        @Header("Authorization") token: String
+    ): Call<EstabelecimentoResponse>
+
+    @GET("/estabelecimentos")
+    fun listarEstabelecimentos(
+        @Header("Authorization") token: String
+    ): Call<List<EstabelecimentoResponse>>
+
+    @PUT("/estabelecimentos/{id}")
+    fun atualizarEstabelecimento(
+        @Path("id") id: Long,
+        @Body request: EstabelecimentoRequest,
+        @Header("Authorization") token: String
+    ): Call<String>
+
+    @DELETE("/estabelecimentos/{id}")
+    fun deletarEstabelecimento(
+        @Path("id") id: Long,
+        @Header("Authorization") token: String
+    ): Call<String>
+
+    @GET("/estabelecimentos/buscar-por-cep/{cep}")
+    fun buscarPorCep(
+        @Path("cep") cep: String
+    ): Call<List<EstabelecimentoResponse>>
+
 }

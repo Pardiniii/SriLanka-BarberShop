@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/establishment_registration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#003771"
+        tools:context=".UI.CadastroEstabelecimentoActivity">
+
+    <ImageView
+            android:id="@+id/logo_img"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/cadastro_estabelecimento_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/judson"
+            android:text="Cadastrar Estabelecimento"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintTop_toBottomOf="@id/logo_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Nome do Estabelecimento -->
+    <include
+            layout="@layout/item_edittext_field"
+            android:id="@+id/field_nome_estabelecimento"
+            app:iconSrc="@drawable/store_24px"
+            app:hintText="Nome do Estabelecimento"
+            app:layout_constraintTop_toBottomOf="@id/cadastro_estabelecimento_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="35dp" />
+
+    <!-- CNPJ -->
+    <include
+            layout="@layout/item_edittext_field"
+            android:id="@+id/field_cnpj"
+            app:iconSrc="@drawable/business_24px"
+            app:hintText="CNPJ"
+            app:layout_constraintTop_toBottomOf="@id/field_nome_estabelecimento"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+    <!-- CEP -->
+    <include
+            layout="@layout/item_edittext_field"
+            android:id="@+id/field_cep"
+            app:iconSrc="@drawable/location_24px"
+            app:hintText="CEP"
+            app:layout_constraintTop_toBottomOf="@id/field_cnpj"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+    <!-- Endereço (rua e número) -->
+    <include
+            layout="@layout/item_edittext_field"
+            android:id="@+id/field_endereco"
+            app:iconSrc="@drawable/home_24px"
+            app:hintText="Endereço (Rua e Número)"
+            app:layout_constraintTop_toBottomOf="@id/field_cep"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+    <!-- Cidade -->
+    <include
+            layout="@layout/item_edittext_field"
+            android:id="@+id/field_cidade"
+            app:iconSrc="@drawable/city_24px"
+            app:hintText="Cidade"
+            app:layout_constraintTop_toBottomOf="@id/field_endereco"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+    <!-- Estado -->
+    <include
+            layout="@layout/item_edittext_field"
+            android:id="@+id/field_estado"
+            app:iconSrc="@drawable/map_24px"
+            app:hintText="Estado"
+            app:layout_constraintTop_toBottomOf="@id/field_cidade"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+    <!-- Mensagem ou resposta -->
+    <TextView
+            android:id="@+id/resposta_estabelecimento_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/judson"
+            android:textSize="18sp"
+            tools:text="Resposta aqui"
+            app:layout_constraintTop_toBottomOf="@id/field_estado"
+            app:layout_constraintStart_toStartOf="@id/field_estado"
+            app:layout_constraintEnd_toEndOf="@id/field_estado"
+            android:layout_marginTop="25dp" />
+
+    <!-- Botão Confirmar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/confirm_btn_estabelecimento"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_text_background"
+            android:backgroundTint="#FF8532"
+            app:layout_constraintTop_toBottomOf="@id/resposta_estabelecimento_tv"
+            app:layout_constraintStart_toStartOf="@id/field_estado"
+            app:layout_constraintEnd_toEndOf="@id/field_estado"
+            android:layout_marginTop="25dp">
+
+        <TextView
+                android:id="@+id/confirm_tv_btn_estabelecimento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/judson"
+                android:text="Confirmar"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
