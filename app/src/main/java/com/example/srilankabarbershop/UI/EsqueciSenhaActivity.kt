@@ -29,7 +29,7 @@ class EsqueciSenhaActivity : AppCompatActivity() {
         val btnEnviarCod = binding.confirmBtn
 
         btnEnviarCod.setOnClickListener {
-            val email = binding.emailEditText.text.toString().trim()
+            val email = binding.emailET.text.toString().trim()
 
             if (email.isEmpty()) {
                 Toast.makeText(this, "Informe o e-mail", Toast.LENGTH_SHORT).show()

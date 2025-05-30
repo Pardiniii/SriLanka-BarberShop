@@ -25,9 +25,9 @@ class NovaSenhaActivity : AppCompatActivity() {
 
         val email = intent.getStringExtra("email")
 
-        binding.confirmBtn.setOnClickListener {
-            val codigo = binding.codigoEditText.text.toString().trim()
-            val novaSenha = binding.novaSenhaEditText.text.toString().trim()
+       /* binding.confirmBtn.setOnClickListener {
+            val codigo = binding.new_password_ET.text.toString().trim()
+            //val novaSenha = binding.novaSenhaEditText.text.toString().trim()
 
             if (email.isNullOrEmpty() || codigo.isEmpty() || novaSenha.isEmpty()) {
                 Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
@@ -50,6 +50,6 @@ class NovaSenhaActivity : AppCompatActivity() {
                     Toast.makeText(this@NovaSenhaActivity, "Erro: ${t.message}", Toast.LENGTH_SHORT).show()
                 }
             })
-        }
+        }*/
     }
 }
