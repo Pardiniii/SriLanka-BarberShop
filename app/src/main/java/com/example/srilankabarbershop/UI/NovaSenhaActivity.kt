@@ -1,23 +1,17 @@
 package com.example.srilankabarbershop.UI
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.srilankabarbershop.databinding.ActivityNovaSenhaBinding
-import com.example.srilankabarbershop.model.RedefinirSenhaRequest
-import com.example.srilankabarbershop.api.RetrofitClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.srilankabarbershop.R
 
 class NovaSenhaActivity : AppCompatActivity() {
-
-    lateinit var binding: ActivityNovaSenhaBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         supportActionBar?.hide()
 
         binding = ActivityNovaSenhaBinding.inflate(layoutInflater)
@@ -51,5 +45,9 @@ class NovaSenhaActivity : AppCompatActivity() {
                 }
             })
         }*/
+
+        setContentView(R.layout.activity_nova_senha)
+
+
     }
 }
