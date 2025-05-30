@@ -13,8 +13,6 @@ import com.example.srilankabarbershop.api.RetrofitClient
 import com.example.srilankabarbershop.databinding.ActivityCadastroBinding
 import com.example.srilankabarbershop.model.RegisterRequest
 import com.example.srilankabarbershop.model.RegisterResponse
-import com.google.gson.Gson
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -76,30 +74,24 @@ class CadastroActivity : AppCompatActivity() {
                         tipo = "CLIENTE" // Define o tipo como CLIENTE
                     )
 
+                    // Faz a chamada da API
+                    RetrofitClient.instance.registrar(request).enqueue(object : Callback<RegisterResponse> {
+                        override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
+                            val responseBodyString = response.errorBody()?.string() ?: response.body()?.toString()
+                            Log.d("DEBUG_RESPONSE", "Resposta bruta: $responseBodyString")
 
-
-                    RetrofitClient.instance.registrar(request).enqueue(object : Callback<ResponseBody> {
-                        override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                            try {
-                                val mensagem = response.body()?.string() ?: "Resposta vazia"
-                                Log.d("DEBUG_RESPONSE", "Resposta bruta: $mensagem")
-
-                                if (response.isSuccessful) {
-                                    Toast.makeText(this@CadastroActivity, mensagem, Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(this@CadastroActivity, EscolhaCorteActivity::class.java)
-                                    startActivity(intent)
-                                    finish()
-                                } else {
-                                    respostaET.text = "Erro no cadastro: ${response.code()} - $mensagem"
-                                    Log.e("CADASTRO_ERROR", "Código: ${response.code()}, Erro: $mensagem")
-                                }
-                            } catch (e: Exception) {
-                                Log.e("CADASTRO_ERROR", "Erro ao processar resposta: ${e.message}")
-                                respostaET.text = "Erro ao interpretar a resposta."
+                            if (response.isSuccessful) {
+                                Toast.makeText(this@CadastroActivity, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this@CadastroActivity, LoginActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            } else {
+                                Log.e("CADASTRO_ERROR", "Código: ${response.code()}, Erro: $responseBodyString")
+                                respostaET.setText("Erro no cadastro: ${response.code()} - ${responseBodyString ?: "Erro desconhecido"}")
                             }
                         }
 
-                        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                             Log.e("CADASTRO_ERROR", "Erro ao fazer a chamada da API: ${t.message}")
                             respostaET.text = "Erro ao realizar o cadastro. Tente novamente mais tarde."
                         }
@@ -107,7 +99,7 @@ class CadastroActivity : AppCompatActivity() {
 
                 } else {
                     respostaET.setText("As senhas não coincidem")
-               }
+                }
             }
         }
     }
