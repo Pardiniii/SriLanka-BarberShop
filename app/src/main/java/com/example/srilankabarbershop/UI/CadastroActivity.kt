@@ -13,6 +13,8 @@ import com.example.srilankabarbershop.api.RetrofitClient
 import com.example.srilankabarbershop.databinding.ActivityCadastroBinding
 import com.example.srilankabarbershop.model.RegisterRequest
 import com.example.srilankabarbershop.model.RegisterResponse
+import com.google.gson.Gson
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,6 +39,7 @@ class CadastroActivity : AppCompatActivity() {
         var confirmPasswordET = binding.confirmPasswordET
         val confirmBtn = binding.confirmBtn
         var respostaET = binding.respostaTV
+        var telefoneET = binding.cellET
 
         fun verificaCamposVazios(): Boolean {
             if (nomeET.text.isEmpty() || emailET.text.isEmpty() || passwordET.text.isEmpty() || confirmPasswordET.text.isEmpty()) {
@@ -64,34 +67,42 @@ class CadastroActivity : AppCompatActivity() {
                 if (verificaSenha()) {
                     val nome = nomeET.text.toString()
                     val email = emailET.text.toString()
+                    val telefone = telefoneET.text.toString()
                     val senha = passwordET.text.toString()
 
                     // Cria o objeto da requisição com tipo CLIENTE
                     val request = RegisterRequest(
                         nome = nome,
                         email = email,
+                        telefone = telefone,
                         senha = senha,
                         tipo = "CLIENTE" // Define o tipo como CLIENTE
                     )
 
-                    // Faz a chamada da API
-                    RetrofitClient.instance.registrar(request).enqueue(object : Callback<RegisterResponse> {
-                        override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
-                            val responseBodyString = response.errorBody()?.string() ?: response.body()?.toString()
-                            Log.d("DEBUG_RESPONSE", "Resposta bruta: $responseBodyString")
 
-                            if (response.isSuccessful) {
-                                Toast.makeText(this@CadastroActivity, "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this@CadastroActivity, LoginActivity::class.java)
-                                startActivity(intent)
-                                finish()
-                            } else {
-                                Log.e("CADASTRO_ERROR", "Código: ${response.code()}, Erro: $responseBodyString")
-                                respostaET.setText("Erro no cadastro: ${response.code()} - ${responseBodyString ?: "Erro desconhecido"}")
+
+                    RetrofitClient.instance.registrar(request).enqueue(object : Callback<ResponseBody> {
+                        override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                            try {
+                                val mensagem = response.body()?.string() ?: "Resposta vazia"
+                                Log.d("DEBUG_RESPONSE", "Resposta bruta: $mensagem")
+
+                                if (response.isSuccessful) {
+                                    Toast.makeText(this@CadastroActivity, mensagem, Toast.LENGTH_SHORT).show()
+                                    val intent = Intent(this@CadastroActivity, EscolhaCorteActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                } else {
+                                    respostaET.text = "Erro no cadastro: ${response.code()} - $mensagem"
+                                    Log.e("CADASTRO_ERROR", "Código: ${response.code()}, Erro: $mensagem")
+                                }
+                            } catch (e: Exception) {
+                                Log.e("CADASTRO_ERROR", "Erro ao processar resposta: ${e.message}")
+                                respostaET.text = "Erro ao interpretar a resposta."
                             }
                         }
 
-                        override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                        override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                             Log.e("CADASTRO_ERROR", "Erro ao fazer a chamada da API: ${t.message}")
                             respostaET.text = "Erro ao realizar o cadastro. Tente novamente mais tarde."
                         }
