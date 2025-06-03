@@ -24,10 +24,13 @@ class MarcarCorteActivity : AppCompatActivity() {
 
         val calendario = binding.calendario
         val corteEscolhido = binding.corteAtualTV
+        val precoDoCorte = binding.valorCorteTV
 
         intent?.let {
             val corteRecebido = intent.getStringExtra("CHAVE")
+            val precoRecebido = intent.getStringExtra("CHAVE2")
             corteEscolhido.text = corteRecebido
+            precoDoCorte.text = precoRecebido
         }
 
 
