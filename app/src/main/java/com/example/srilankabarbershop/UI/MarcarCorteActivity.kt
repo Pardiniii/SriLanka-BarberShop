@@ -16,6 +16,8 @@ class MarcarCorteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMarcarCorteBinding.inflate(layoutInflater)
+
+        supportActionBar?.hide()
         enableEdgeToEdge()
         setContentView(binding.root)
         supportActionBar?.hide()
