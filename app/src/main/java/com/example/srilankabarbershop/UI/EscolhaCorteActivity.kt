@@ -26,6 +26,8 @@ class EscolhaCorteActivity : AppCompatActivity() {
         reservaJaca.setOnClickListener {
             val intent = Intent(this, MarcarCorteActivity::class.java)
             intent.putExtra("CHAVE", "Corte do Jaca")
+            intent.putExtra("CHAVE2", "R$ 25,00")
+
             startActivity(intent)
         }
 
@@ -33,6 +35,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
         reservaZeca.setOnClickListener {
             val intent = Intent(this, MarcarCorteActivity::class.java)
             intent.putExtra("CHAVE", "Corte do Zeca")
+            intent.putExtra("CHAVE2", "R$ 30,00")
             startActivity(intent)
         }
 
@@ -40,6 +43,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
         reservaCalvao.setOnClickListener {
             val intent = Intent(this, MarcarCorteActivity::class.java)
             intent.putExtra("CHAVE", "Calvão de cria")
+            intent.putExtra("CHAVE2", "R$ 44,99")
             startActivity(intent)
         }
 
@@ -47,6 +51,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
         reservaNevou.setOnClickListener {
             val intent = Intent(this, MarcarCorteActivity::class.java)
             intent.putExtra("CHAVE", "Nevou")
+            intent.putExtra("CHAVE2", "R$ 100,00")
             startActivity(intent)
         }
 

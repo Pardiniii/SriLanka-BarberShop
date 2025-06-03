@@ -16,16 +16,21 @@ class MarcarCorteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMarcarCorteBinding.inflate(layoutInflater)
+
+        supportActionBar?.hide()
         enableEdgeToEdge()
         setContentView(binding.root)
         supportActionBar?.hide()
 
         val calendario = binding.calendario
         val corteEscolhido = binding.corteAtualTV
+        val precoDoCorte = binding.valorCorteTV
 
         intent?.let {
             val corteRecebido = intent.getStringExtra("CHAVE")
+            val precoRecebido = intent.getStringExtra("CHAVE2")
             corteEscolhido.text = corteRecebido
+            precoDoCorte.text = precoRecebido
         }
 
 
