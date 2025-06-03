@@ -12,7 +12,7 @@ import com.example.srilankabarbershop.R
 class AvaliacaoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContentView(R.layout.activity_avaliacao)
         val detalhesTV = findViewById<TextView>(R.id.tela_avaliacao_detalhes)
 
