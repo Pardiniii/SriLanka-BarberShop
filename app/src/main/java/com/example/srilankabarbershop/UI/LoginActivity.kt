@@ -1,5 +1,6 @@
 package com.example.srilankabarbershop.UI
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -49,7 +50,8 @@ class LoginActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val token = response.body()?.token
                         Toast.makeText(this@LoginActivity, "Login realizado com sucesso!", Toast.LENGTH_SHORT).show()
-                        //  salvar o token no SharedPreferences
+                        val sharedPreferences = getSharedPreferences("USER_PREFS", Context.MODE_PRIVATE)
+                        sharedPreferences.edit().putString("USER_TOKEN", token).apply()
                         val intent = Intent(this@LoginActivity, EscolhaCorteActivity::class.java)
                         startActivity(intent)
                     } else {

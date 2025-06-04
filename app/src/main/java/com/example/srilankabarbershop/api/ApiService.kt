@@ -1,5 +1,6 @@
 package com.example.srilankabarbershop.api
 
+import com.example.srilankabarbershop.model.AgendamentoRequest
 import com.example.srilankabarbershop.model.LoginRequest
 import com.example.srilankabarbershop.model.LoginResponse
 import com.example.srilankabarbershop.model.RecuperarSenhaRequest
@@ -9,6 +10,8 @@ import com.example.srilankabarbershop.model.RegisterResponse
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.Header
+import retrofit2.http.HeaderMap
 import retrofit2.http.Headers
 import retrofit2.http.POST
 
@@ -26,6 +29,11 @@ interface ApiService {
 
     @POST("/redefinir-senha")
     fun redefinirSenha(@Body request: RedefinirSenhaRequest): Call<String>
+
+    @POST("agenda")
+    fun agendar(
+        @Header("Authorization") token: String,
+        @Body request: AgendamentoRequest): Call<Void>
 
 
 }
