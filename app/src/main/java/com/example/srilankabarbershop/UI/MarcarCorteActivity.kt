@@ -1,5 +1,6 @@
 package com.example.srilankabarbershop.UI
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,8 @@ class MarcarCorteActivity : AppCompatActivity() {
         val calendario = binding.calendario
         val corteEscolhido = binding.corteAtualTV
         val precoDoCorte = binding.valorCorteTV
+        val botaoConfirmar = binding.confirmaCorteBtn
+        val dataCorte = binding.dataCorteTV
 
         intent?.let {
             val corteRecebido = intent.getStringExtra("CHAVE")
@@ -33,15 +36,20 @@ class MarcarCorteActivity : AppCompatActivity() {
             precoDoCorte.text = precoRecebido
         }
 
-
         calendario.setOnDateChangeListener { _, year, month, day ->
             val dataSelecionada = ("%02d".format(day) + "/"
                     + "%02d".format((month + 1)) + "/"
                     + year)
-            val dataCorte = binding.dataCorteTV
             dataCorte.text = dataSelecionada
         }
 
+        botaoConfirmar.setOnClickListener {
+            val intent = Intent(this, TelaDePagamentoActivity::class.java)
+            intent.putExtra("CHAVE_CORTE", corteEscolhido.text)
+            intent.putExtra("CHAVE_PRECO", precoDoCorte.text)
+            intent.putExtra("CHAVE_DATA", dataCorte.text)
+            startActivity(intent)
+        }
 
     }
 }

@@ -14,13 +14,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:fontFamily="@font/judson"
         android:text="Pagamento"
         android:textColor="@color/white"
         android:textSize="32sp"
-        android:fontFamily="@font/judson"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -28,50 +28,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/judson"
         android:text="Método de pagamento"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:fontFamily="@font/judson"
-        app:layout_constraintTop_toBottomOf="@id/pagamento_tv"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/pagamento_tv" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cartao_layout"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/edit_text_background"
-        app:layout_constraintTop_toBottomOf="@id/metodo_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp">
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/metodo_tv">
 
         <ImageView
             android:id="@+id/imagem_bandeira"
             android:layout_width="42dp"
             android:layout_height="39dp"
             android:layout_marginStart="12dp"
-            android:src="@drawable/mastercard"
             android:contentDescription="Bandeira do cartão"
-            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/mastercard"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/cartao_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/judson"
             android:text="Cartão de crédito"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:fontFamily="@font/judson"
-            app:layout_constraintStart_toEndOf="@id/imagem_bandeira"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="16dp" />
+            app:layout_constraintStart_toEndOf="@id/imagem_bandeira"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -79,43 +79,43 @@
         android:id="@+id/pix_layout"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        app:layout_constraintTop_toBottomOf="@id/cartao_layout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp">
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cartao_layout">
 
         <ImageView
             android:id="@+id/imagem_pix"
             android:layout_width="40dp"
             android:layout_height="29dp"
             android:layout_marginStart="12dp"
-            android:src="@drawable/pix"
             android:contentDescription="Logo do Pix"
-            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/pix"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/pix_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/judson"
             android:text="Pix"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:fontFamily="@font/judson"
-            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/imagem_pix"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <Button
         android:id="@+id/botaoCadastrarCartao"
-        android:layout_width="114dp"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/white"
@@ -131,88 +131,110 @@
         android:id="@+id/resumo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/judson"
         android:text="Resumo da reserva"
         android:textColor="@color/white"
         android:textSize="24sp"
-        android:fontFamily="@font/judson"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/botaoCadastrarCartao"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="32dp" />
+        app:layout_constraintTop_toBottomOf="@id/botaoCadastrarCartao" />
+
+    <TextView
+        android:id="@+id/corte_escolhido_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/judson"
+        android:text="Crote escolhido"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/resumo"
+        app:layout_constraintTop_toBottomOf="@id/resumo" />
+
+    <TextView
+        android:id="@+id/corte_escolhido_ofc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/judson"
+        android:text="Corte atual"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/corte_escolhido_TV" />
 
     <TextView
         android:id="@+id/valorCorte_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/judson"
         android:text="Valor do corte"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/judson"
-        app:layout_constraintTop_toBottomOf="@id/resumo"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="32dp" />
+        app:layout_constraintTop_toBottomOf="@id/corte_escolhido_TV" />
 
     <TextView
         android:id="@+id/valor_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/judson"
         android:text="R$ Valor"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:fontFamily="@font/judson"
-        app:layout_constraintTop_toTopOf="@id/valorCorte_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="32dp" />
+        app:layout_constraintTop_toTopOf="@id/valorCorte_tv" />
 
     <TextView
         android:id="@+id/dataReserva_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/judson"
         android:text="Data da reserva"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/judson"
-        app:layout_constraintTop_toBottomOf="@id/valorCorte_tv"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="32dp" />
+        app:layout_constraintTop_toBottomOf="@id/valorCorte_tv" />
 
     <TextView
         android:id="@+id/data_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/judson"
         android:text="XX/XX/XXXX"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:fontFamily="@font/judson"
-        app:layout_constraintTop_toTopOf="@id/dataReserva_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="32dp" />
-
+        app:layout_constraintTop_toTopOf="@id/dataReserva_tv" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/botaoPagar"
-        android:background="@drawable/edit_botao"
-        app:layout_constraintStart_toStartOf="@id/dataReserva_tv"
-        app:layout_constraintTop_toBottomOf="@id/dataReserva_tv"
-        android:layout_height="52dp"
         android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/edit_botao"
         app:layout_constraintEnd_toEndOf="@id/data_tv"
-        android:layout_marginTop="42dp"/>
+        app:layout_constraintStart_toStartOf="@id/dataReserva_tv"
+        app:layout_constraintTop_toBottomOf="@id/dataReserva_tv" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pagar"
-                app:layout_constraintStart_toStartOf="@id/botaoPagar"
-                app:layout_constraintEnd_toEndOf="@id/botaoPagar"
-                app:layout_constraintTop_toTopOf="@id/botaoPagar"
-                android:fontFamily="@font/judson"
-                android:textSize="22sp"
-                app:layout_constraintBottom_toBottomOf="@id/botaoPagar"
-                android:textColor="@color/black"
-                />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/judson"
+        android:text="Pagar"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/botaoPagar"
+        app:layout_constraintEnd_toEndOf="@id/botaoPagar"
+        app:layout_constraintStart_toStartOf="@id/botaoPagar"
+        app:layout_constraintTop_toTopOf="@id/botaoPagar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
