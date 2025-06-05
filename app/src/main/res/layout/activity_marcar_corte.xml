@@ -49,6 +49,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/instrucoes" />
 
+    <Button
+        android:id="@+id/horas_10_30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:30"
+        android:textColor="@color/black"
+        android:backgroundTint="#FF8532"
+        app:layout_constraintStart_toStartOf="@id/background_infos"
+        app:layout_constraintTop_toBottomOf="@id/calendario"/>
+
+    <Button
+        android:id="@+id/horas_14_00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="14:00"
+        android:textColor="@color/black"
+        android:backgroundTint="#FF8532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendario"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:id="@+id/horas_17_45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="17:45"
+        android:textColor="@color/black"
+        android:backgroundTint="#FF8532"
+        app:layout_constraintTop_toBottomOf="@id/calendario"
+        app:layout_constraintEnd_toEndOf="@id/background_infos" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/background_infos"
@@ -63,7 +93,7 @@
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calendario">
+        app:layout_constraintTop_toBottomOf="@id/horas_14_00">
 
         <TextView
             android:id="@+id/corte_atual_TV"

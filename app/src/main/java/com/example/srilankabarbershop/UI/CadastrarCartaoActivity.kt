@@ -24,8 +24,9 @@ class CadastrarCartaoActivity : AppCompatActivity() {
         val botaoCadastrar = binding.cadastrar
 
         botaoCadastrar.setOnClickListener {
-            val intent = Intent(this, TelaDePagamentoActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this, TelaDePagamentoActivity::class.java)
+//            startActivity(intent)
+            finish()
         }
 
     }
