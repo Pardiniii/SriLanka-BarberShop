@@ -113,6 +113,11 @@ class MarcarCorteActivity : AppCompatActivity() {
                     override fun onFailure(call: Call<Void>, t: Throwable) {
                         Log.d("API_ERRO", "Falha na conexão: ${t.message}")
                         Toast.makeText(this@MarcarCorteActivity, "Falha na conexão: ${t.message}", Toast.LENGTH_LONG).show()
+                        val intent = Intent(this@MarcarCorteActivity,TelaDePagamentoActivity::class.java)
+                        intent.putExtra("CHAVE_CORTE", corteEscolhido.text)
+                        intent.putExtra("CHAVE_PRECO", precoDoCorte.text)
+                        intent.putExtra("CHAVE_DATA", dataCorte.text)
+                        startActivity(intent)
                     }
                 })
         }

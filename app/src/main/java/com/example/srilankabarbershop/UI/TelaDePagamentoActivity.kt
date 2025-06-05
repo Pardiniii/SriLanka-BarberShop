@@ -19,13 +19,16 @@ class TelaDePagamentoActivity : AppCompatActivity() {
 
         binding = ActivityTelaDePagamentoBinding.inflate(layoutInflater)
         enableEdgeToEdge()
+        supportActionBar?.hide()
         setContentView(binding.root)
 
         val corteAtual = binding.corteEscolhidoOfc
         val valorCorte = binding.valorTv
         val dataDaReserva = binding.dataTv
+        val botaoCadastrarCartao = binding.cartaoLayout
+        val botaoPagarPix = binding.pixLayout
+        val botaoPagamento = binding.botaoPagar
 
-        val botaoCadastrarCartao = binding.botaoCadastrarCartao
         intent?.let {
             val corteConfirmado = intent.getStringExtra("CHAVE_CORTE")
             val precoCorte = intent.getStringExtra("CHAVE_PRECO")
@@ -40,10 +43,13 @@ class TelaDePagamentoActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val botaoPagamento = binding.botaoPagar
-
         botaoPagamento.setOnClickListener{
             val intent = Intent(this, TelaDeAgradecimentoActivity::class.java)
+            startActivity(intent)
+        }
+
+        botaoPagarPix.setOnClickListener {
+            val intent = Intent(this, PixActivity::class.java)
             startActivity(intent)
         }
     }

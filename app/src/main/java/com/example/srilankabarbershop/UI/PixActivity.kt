@@ -7,23 +7,23 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.srilankabarbershop.R
-import com.example.srilankabarbershop.databinding.ActivityCadastrarCartaoBinding
+import com.example.srilankabarbershop.databinding.ActivityPixBinding
 
-class CadastrarCartaoActivity : AppCompatActivity() {
+class PixActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityCadastrarCartaoBinding
+    lateinit var binding: ActivityPixBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityCadastrarCartaoBinding.inflate(layoutInflater)
+        binding = ActivityPixBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         supportActionBar?.hide()
         setContentView(binding.root)
 
-        val botaoCadastrar = binding.cadastrar
+        val botaoCancelar = binding.voltarBtn
 
-        botaoCadastrar.setOnClickListener {
+        botaoCancelar.setOnClickListener {
             val intent = Intent(this, TelaDePagamentoActivity::class.java)
             startActivity(intent)
         }
