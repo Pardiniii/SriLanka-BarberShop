@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:contentDescription="password logo"
-            android:src="@drawable/lock_24px"
+            android:src="@drawable/chave"
             app:layout_constraintBottom_toBottomOf="@id/backgroundPasswordField"
             app:layout_constraintStart_toStartOf="@id/backgroundPasswordField"
             app:layout_constraintTop_toTopOf="@id/backgroundPasswordField"
@@ -62,7 +62,6 @@
             android:background="@android:color/transparent"
             android:fontFamily="@font/judson"
             android:hint="Código"
-            android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="@id/backgroundPasswordField"
             app:layout_constraintStart_toEndOf="@id/new_password_img"
             app:layout_constraintTop_toTopOf="@id/backgroundPasswordField" />

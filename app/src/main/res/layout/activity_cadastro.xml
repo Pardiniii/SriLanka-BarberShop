@@ -122,7 +122,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:contentDescription="cell logo"
-            android:src="@drawable/mail_24px"
+            android:src="@drawable/cell"
             app:layout_constraintBottom_toBottomOf="@id/backgroundCellphoneField"
             app:layout_constraintStart_toStartOf="@id/backgroundCellphoneField"
             app:layout_constraintTop_toTopOf="@id/backgroundCellphoneField"

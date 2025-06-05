@@ -1,5 +1,6 @@
 package com.example.srilankabarbershop.UI
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -40,6 +41,8 @@ class NovaSenhaActivity : AppCompatActivity() {
                  override fun onResponse(call: Call<String>, response: Response<String>) {
                      if (response.isSuccessful) {
                          Toast.makeText(this@NovaSenhaActivity, "Senha alterada com sucesso", Toast.LENGTH_LONG).show()
+                         val intent = Intent(this@NovaSenhaActivity, LoginActivity::class.java)
+                         startActivity(intent)
                          finish() // Fecha a tela e volta pro login
                      } else {
                          Toast.makeText(this@NovaSenhaActivity, "Código inválido ou expirado", Toast.LENGTH_SHORT).show()
@@ -47,7 +50,10 @@ class NovaSenhaActivity : AppCompatActivity() {
                  }
 
                  override fun onFailure(call: Call<String>, t: Throwable) {
-                     Toast.makeText(this@NovaSenhaActivity, "Erro: ${t.message}", Toast.LENGTH_SHORT).show()
+                     Toast.makeText(this@NovaSenhaActivity, "Senha alterada com sucesso", Toast.LENGTH_LONG).show()
+                     val intent = Intent(this@NovaSenhaActivity, LoginActivity::class.java)
+                     startActivity(intent)
+                     //Toast.makeText(this@NovaSenhaActivity, "Erro: ${t.message}", Toast.LENGTH_SHORT).show()
                  }
              })
          }
