@@ -8,13 +8,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.srilankabarbershop.R
+import com.example.srilankabarbershop.databinding.ActivityAvaliacaoBinding
 
 class AvaliacaoActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityAvaliacaoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_avaliacao)
-        val detalhesTV = findViewById<TextView>(R.id.tela_avaliacao_detalhes)
+        binding = ActivityAvaliacaoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val detalhesTV = binding.telaAvaliacaoDetalhes
+        val servicosTV = binding.telaAvaliacaoServicosTV
+
+        servicosTV.setOnClickListener{
+            val intent = Intent(this, EscolhaCorteActivity::class.java)
+            startActivity(intent)
+        }
 
         detalhesTV.setOnClickListener {
             val intent = Intent(this, DetalhesActivity::class.java)
