@@ -18,14 +18,9 @@ import com.jakewharton.threetenabp.AndroidThreeTen
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-//import java.time.LocalDate
-//import java.time.format.DateTimeFormatter
 import org.threeten.bp.LocalDate
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
-import org.threeten.bp.ZoneId
-import org.threeten.bp.ZonedDateTime
-
 
 class MarcarCorteActivity : AppCompatActivity() {
 
@@ -37,7 +32,6 @@ class MarcarCorteActivity : AppCompatActivity() {
         AndroidThreeTen.init(this)
 
         binding = ActivityMarcarCorteBinding.inflate(layoutInflater)
-
         supportActionBar?.hide()
         enableEdgeToEdge()
         setContentView(binding.root)
@@ -51,10 +45,13 @@ class MarcarCorteActivity : AppCompatActivity() {
         val btn14h00 = binding.horas1400
         val btn17h45 = binding.horas1745
 
+        // Variáveis para armazenar data e hora escolhidas
         var horaSelecionada: String? = null
+        var dataSelecionada: LocalDate? = null
 
         val buttons = listOf(btn10h30, btn14h00, btn17h45)
 
+        // Recebe dados do corte da activity anterior
         intent?.let {
             val corteRecebido = intent.getStringExtra("CHAVE")
             val precoRecebido = intent.getStringExtra("CHAVE2")
@@ -62,44 +59,50 @@ class MarcarCorteActivity : AppCompatActivity() {
             precoDoCorte.text = precoRecebido
         }
 
-        buttons.forEach { button ->
-            button.setOnClickListener {
-                buttons.forEach {
-                    it.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FF8532")) // Cor padrão
-                    it.setTextColor(Color.BLACK) // Texto padrão
-                }
-
-                button.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FF5722")) // Cor quando selecionado
-                button.setTextColor(Color.WHITE) // Texto quando selecionado
-
-                // Salva a hora do botão clicado
-                horaSelecionada = button.text.toString()
-            }
-        }
-
-        calendario.setOnDateChangeListener { _, year, month, day ->
-            // Crie um LocalDate com o ano, mês e dia selecionados
-            val localDate = LocalDate.of(year, month + 1, day)  // mês começa em 0, por isso +1
-
-            // Formate para exibição na tela no formato "dd/MM/yyyy"
-            val formatterExibicao = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-            val dataExibicao = localDate.format(formatterExibicao)
-            dataCorte.text = dataExibicao // Exibe no formato "20/05/2025"
-
-            if (horaSelecionada != null) {
+        // Função que junta data + hora sempre que qualquer um dos dois for alterado
+        fun atualizarDataHoraSelecionada() {
+            if (dataSelecionada != null && horaSelecionada != null) {
                 val (hora, minuto) = horaSelecionada!!.split(":").map { it.toInt() }
+                val localDateTime = dataSelecionada!!.atTime(hora, minuto)
 
-                val localDateTime = localDate.atTime(hora, minuto)
+                // Mostra no formato dd/MM/yyyy
+                val formatterExibicao = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+                dataCorte.text = dataSelecionada!!.format(formatterExibicao)
+
+                // Salva no formato correto para envio na API
                 val formatterEnvio = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
                 val dataEnvio = localDateTime.format(formatterEnvio)
-
                 dataCorte.tag = dataEnvio
             } else {
                 dataCorte.tag = null
             }
         }
 
+        // Quando clicar em um botão de horário
+        buttons.forEach { button ->
+            button.setOnClickListener {
+                buttons.forEach {
+                    it.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FF8532")) // Cor padrão
+                    it.setTextColor(Color.BLACK)
+                }
 
+                button.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FF5722")) // Cor do botão selecionado
+                button.setTextColor(Color.WHITE)
+
+                horaSelecionada = button.text.toString()
+
+                // Atualiza a data + hora combinadas
+                atualizarDataHoraSelecionada()
+            }
+        }
+
+        // Quando selecionar uma data no calendário
+        calendario.setOnDateChangeListener { _, year, month, day ->
+            dataSelecionada = LocalDate.of(year, month + 1, day) // Mês começa em 0, por isso +1
+            atualizarDataHoraSelecionada() // Atualiza a data + hora combinadas
+        }
+
+        // Quando clicar no botão de confirmar agendamento
         botaoConfirmar.setOnClickListener {
             val corteId = intent.getLongExtra("CORTE_ID", -1L)
             if (corteId == -1L) {
@@ -107,9 +110,8 @@ class MarcarCorteActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Obtenha a data formatada para envio
-            val dataSelecionada = dataCorte.tag?.toString() ?: ""
-            if (dataSelecionada.isEmpty()) {
+            val dataSelecionadaStr = dataCorte.tag?.toString() ?: ""
+            if (dataSelecionadaStr.isEmpty()) {
                 Toast.makeText(this, "Data ou horário inválido.", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
@@ -119,22 +121,20 @@ class MarcarCorteActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Converte a parte da data (yyyy-MM-dd) para LocalDate
-            val localDate = LocalDate.parse(dataSelecionada.substring(0, 10))
-
+            // Remove 3 horas para ajustar fuso
+            val localDate = LocalDate.parse(dataSelecionadaStr.substring(0, 10))
             val (hora, minuto) = horaSelecionada!!.split(":").map { it.toInt() }
-
             val dataHora = localDate.atTime(hora, minuto).minusHours(3)
 
             val formatterEnvio = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
             val dataEnvio = dataHora.format(formatterEnvio)
 
-            val clienteId = 11L // Seu cliente
+            val clienteId = 7L // Exemplo fixo
 
             val agendamentoRequest = AgendamentoRequest(
                 clienteId = clienteId,
                 servicoId = corteId,
-                dataHora = dataEnvio//dataSelecionada
+                dataHora = dataEnvio
             )
 
             val token = getToken()
@@ -153,7 +153,7 @@ class MarcarCorteActivity : AppCompatActivity() {
                             val intent = Intent(this@MarcarCorteActivity, TelaDePagamentoActivity::class.java)
                             intent.putExtra("CHAVE_CORTE", corteEscolhido.text)
                             intent.putExtra("CHAVE_PRECO", precoDoCorte.text)
-                            intent.putExtra("CHAVE_DATA", dataCorte.text) // Usa o formato exibido na tela
+                            intent.putExtra("CHAVE_DATA", dataCorte.text)
                             startActivity(intent)
                         } else {
                             Log.d("API_ERRO", "Erro ao agendar: Código ${response.code()}, mensagem: ${response.message()}, corpo: ${response.errorBody()?.string()}")
@@ -163,8 +163,8 @@ class MarcarCorteActivity : AppCompatActivity() {
 
                     override fun onFailure(call: Call<Void>, t: Throwable) {
                         Log.d("API_ERRO", "Falha na conexão: ${t.message}")
-                        //Toast.makeText(this@MarcarCorteActivity, "Falha na conexão: ${t.message}", Toast.LENGTH_LONG).show()
-                        val intent = Intent(this@MarcarCorteActivity,TelaDePagamentoActivity::class.java)
+                        Toast.makeText(this@MarcarCorteActivity, "Falha na conexão: ${t.message}", Toast.LENGTH_LONG).show()
+                        val intent = Intent(this@MarcarCorteActivity, TelaDePagamentoActivity::class.java)
                         intent.putExtra("CHAVE_CORTE", corteEscolhido.text)
                         intent.putExtra("CHAVE_PRECO", precoDoCorte.text)
                         intent.putExtra("CHAVE_DATA", dataCorte.text)

@@ -13,7 +13,7 @@
         android:id="@+id/titulo_pagina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="34dp"
         android:fontFamily="@font/judson"
         android:text="Agendar Corte"
         android:textColor="@color/black"

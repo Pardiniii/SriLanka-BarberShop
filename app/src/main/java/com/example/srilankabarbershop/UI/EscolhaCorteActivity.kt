@@ -27,7 +27,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
             val intent = Intent(this, MarcarCorteActivity::class.java)
             intent.putExtra("CHAVE", "Corte do Jaca")
             intent.putExtra("CHAVE2", "R$ 25,00")
-            intent.putExtra("CORTE_ID", 1L)
+            intent.putExtra("CORTE_ID", 3L)
             startActivity(intent)
         }
 
@@ -36,7 +36,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
             val intent = Intent(this, MarcarCorteActivity::class.java)
             intent.putExtra("CHAVE", "Corte do Zeca")
             intent.putExtra("CHAVE2", "R$ 30,00")
-            intent.putExtra("CORTE_ID", 2L)
+            intent.putExtra("CORTE_ID", 4L)
             startActivity(intent)
         }
 
@@ -45,7 +45,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
             val intent = Intent(this, MarcarCorteActivity::class.java)
             intent.putExtra("CHAVE", "Calvão de cria")
             intent.putExtra("CHAVE2", "R$ 44,99")
-            intent.putExtra("CORTE_ID", 3L)
+            intent.putExtra("CORTE_ID", 5L)
             startActivity(intent)
         }
 
@@ -54,7 +54,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
             val intent = Intent(this, MarcarCorteActivity::class.java)
             intent.putExtra("CHAVE", "Nevou")
             intent.putExtra("CHAVE2", "R$ 100,00")
-            intent.putExtra("CORTE_ID", 4L)
+            intent.putExtra("CORTE_ID", 6L)
             startActivity(intent)
         }
 

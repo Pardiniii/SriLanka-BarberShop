@@ -24,8 +24,7 @@ class PixActivity : AppCompatActivity() {
         val botaoCancelar = binding.voltarBtn
 
         botaoCancelar.setOnClickListener {
-            val intent = Intent(this, TelaDePagamentoActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
     }
