@@ -55,13 +55,13 @@
             app:tint="@color/black" />
 
         <EditText
-            android:id="@+id/new_password_ET"
+            android:id="@+id/codigo_ET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
             android:background="@android:color/transparent"
             android:fontFamily="@font/judson"
-            android:hint="Senha"
+            android:hint="Código"
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="@id/backgroundPasswordField"
             app:layout_constraintStart_toEndOf="@id/new_password_img"
@@ -92,13 +92,13 @@
             app:tint="@color/black" />
 
         <EditText
-            android:id="@+id/confirm_password_ET"
+            android:id="@+id/nova_senha_ET"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
             android:background="@android:color/transparent"
             android:fontFamily="@font/judson"
-            android:hint="Confirmar senha"
+            android:hint="Nova senha"
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="@id/backgroundConfirmPasswordField"
             app:layout_constraintStart_toEndOf="@id/confirm_new_password_img"
