@@ -46,15 +46,23 @@ class MarcarCorteActivity : AppCompatActivity() {
         }
 
         calendario.setOnDateChangeListener { _, year, month, day ->
-            // crie um LocalDate com o ano, mês e dia selecionados
+            // Crie um LocalDate com o ano, mês e dia selecionados
             val localDate = LocalDate.of(year, month + 1, day)  // mês começa em 0, por isso +1
-            // converta para LocalDateTime com hora zero
-            val localDateTime = localDate.atStartOfDay()
-            // formate para string ISO 8601
-            val formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
-            val dataFormatada = localDateTime.format(formatter)
-            dataCorte.text = dataFormatada  // ex: "2025-06-11T00:00:00"
+
+            // Formate para exibição na tela no formato "dd/MM/yyyy"
+            val formatterExibicao = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+            val dataExibicao = localDate.format(formatterExibicao)
+            dataCorte.text = dataExibicao // Exibe no formato "20/05/2025"
+
+            // Converta para ISO-8601 com hora fixa (14:30) para envio
+            val localDateTime = localDate.atTime(14, 30) // Define horário fixo
+            val formatterEnvio = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+            val dataEnvio = localDateTime.format(formatterEnvio)
+
+            // Armazene a data no formato ISO-8601 para envio
+            dataCorte.tag = dataEnvio
         }
+
 
         botaoConfirmar.setOnClickListener {
             val corteId = intent.getLongExtra("CORTE_ID", -1L)
@@ -63,8 +71,14 @@ class MarcarCorteActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val dataSelecionada = dataCorte.text.toString() // já está no formato ISO 8601
-            val clienteId = 11L // seu cliente
+            // Obtenha a data formatada para envio
+            val dataSelecionada = dataCorte.tag?.toString() ?: ""
+            if (dataSelecionada.isEmpty()) {
+                Toast.makeText(this, "Selecione uma data válida.", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            val clienteId = 17L // Seu cliente
 
             val agendamentoRequest = AgendamentoRequest(
                 clienteId = clienteId,
@@ -85,10 +99,10 @@ class MarcarCorteActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<Void>, response: Response<Void>) {
                         if (response.isSuccessful) {
                             Toast.makeText(this@MarcarCorteActivity, "Agendamento realizado!", Toast.LENGTH_LONG).show()
-                            val intent = Intent(this@MarcarCorteActivity,TelaDePagamentoActivity::class.java)
+                            val intent = Intent(this@MarcarCorteActivity, TelaDePagamentoActivity::class.java)
                             intent.putExtra("CHAVE_CORTE", corteEscolhido.text)
                             intent.putExtra("CHAVE_PRECO", precoDoCorte.text)
-                            intent.putExtra("CHAVE_DATA", dataCorte.text)
+                            intent.putExtra("CHAVE_DATA", dataCorte.text) // Usa o formato exibido na tela
                             startActivity(intent)
                         } else {
                             Log.d("API_ERRO", "Erro ao agendar: Código ${response.code()}, mensagem: ${response.message()}, corpo: ${response.errorBody()?.string()}")
@@ -107,7 +121,6 @@ class MarcarCorteActivity : AppCompatActivity() {
                     }
                 })
         }
-
     }
 
     private fun getToken(): String? {
