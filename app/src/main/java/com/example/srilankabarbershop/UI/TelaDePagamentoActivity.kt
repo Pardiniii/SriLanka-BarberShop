@@ -26,6 +26,8 @@ class TelaDePagamentoActivity : AppCompatActivity() {
         val valorCorte = binding.valorTv
         val dataDaReserva = binding.dataTv
         val botaoCadastrarCartao = binding.cartaoLayout
+        val botaoPagarPix = binding.pixLayout
+        val botaoPagamento = binding.botaoPagar
 
         intent?.let {
             val corteConfirmado = intent.getStringExtra("CHAVE_CORTE")
@@ -41,10 +43,13 @@ class TelaDePagamentoActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val botaoPagamento = binding.botaoPagar
-
         botaoPagamento.setOnClickListener{
             val intent = Intent(this, TelaDeAgradecimentoActivity::class.java)
+            startActivity(intent)
+        }
+
+        botaoPagarPix.setOnClickListener {
+            val intent = Intent(this, PixActivity::class.java)
             startActivity(intent)
         }
     }
