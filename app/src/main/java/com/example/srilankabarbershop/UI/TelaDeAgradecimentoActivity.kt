@@ -27,6 +27,7 @@ class TelaDeAgradecimentoActivity : AppCompatActivity() {
         botaoVoltar.setOnClickListener {
             val intent = Intent(this, EscolhaCorteActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

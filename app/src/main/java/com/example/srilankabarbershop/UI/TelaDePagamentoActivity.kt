@@ -46,11 +46,13 @@ class TelaDePagamentoActivity : AppCompatActivity() {
         botaoPagamento.setOnClickListener{
             val intent = Intent(this, TelaDeAgradecimentoActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         botaoPagarPix.setOnClickListener {
             val intent = Intent(this, PixActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

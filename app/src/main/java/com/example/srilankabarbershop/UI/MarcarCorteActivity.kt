@@ -14,13 +14,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.srilankabarbershop.api.RetrofitClient
 import com.example.srilankabarbershop.databinding.ActivityMarcarCorteBinding
 import com.example.srilankabarbershop.model.AgendamentoRequest
-import com.jakewharton.threetenabp.AndroidThreeTen
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import org.threeten.bp.LocalDate
-import org.threeten.bp.LocalDateTime
-import org.threeten.bp.format.DateTimeFormatter
+
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class MarcarCorteActivity : AppCompatActivity() {
 
@@ -29,7 +29,7 @@ class MarcarCorteActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AndroidThreeTen.init(this)
+
 
         binding = ActivityMarcarCorteBinding.inflate(layoutInflater)
         supportActionBar?.hide()
@@ -155,6 +155,7 @@ class MarcarCorteActivity : AppCompatActivity() {
                             intent.putExtra("CHAVE_PRECO", precoDoCorte.text)
                             intent.putExtra("CHAVE_DATA", dataCorte.text)
                             startActivity(intent)
+                            finish()
                         } else {
                             Log.d("API_ERRO", "Erro ao agendar: Código ${response.code()}, mensagem: ${response.message()}, corpo: ${response.errorBody()?.string()}")
                             Toast.makeText(this@MarcarCorteActivity, "Erro ao agendar! Verifique o log.", Toast.LENGTH_LONG).show()
@@ -169,6 +170,7 @@ class MarcarCorteActivity : AppCompatActivity() {
                         intent.putExtra("CHAVE_PRECO", precoDoCorte.text)
                         intent.putExtra("CHAVE_DATA", dataCorte.text)
                         startActivity(intent)
+                        finish()
                     }
                 })
         }

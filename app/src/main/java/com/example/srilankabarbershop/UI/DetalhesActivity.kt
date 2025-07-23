@@ -26,10 +26,12 @@ class DetalhesActivity : AppCompatActivity() {
         servicosTV.setOnClickListener{
             val intent = Intent(this, EscolhaCorteActivity::class.java)
             startActivity(intent)
+            finish()
         }
         avaliacoesTV.setOnClickListener {
             val intent = Intent(this, AvaliacaoActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

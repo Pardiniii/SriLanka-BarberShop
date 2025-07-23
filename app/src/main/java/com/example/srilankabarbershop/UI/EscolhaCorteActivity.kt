@@ -29,6 +29,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
             intent.putExtra("CHAVE2", "R$ 25,00")
             intent.putExtra("CORTE_ID", 3L)
             startActivity(intent)
+            finish()
         }
 
         val reservaZeca = binding.reservarZecaBTN
@@ -38,6 +39,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
             intent.putExtra("CHAVE2", "R$ 30,00")
             intent.putExtra("CORTE_ID", 4L)
             startActivity(intent)
+            finish()
         }
 
         val reservaCalvao = binding.reservarCalvaoBTN
@@ -47,6 +49,7 @@ class EscolhaCorteActivity : AppCompatActivity() {
             intent.putExtra("CHAVE2", "R$ 44,99")
             intent.putExtra("CORTE_ID", 5L)
             startActivity(intent)
+            finish()
         }
 
         val reservaNevou = binding.reservarNevouBTN
@@ -56,16 +59,19 @@ class EscolhaCorteActivity : AppCompatActivity() {
             intent.putExtra("CHAVE2", "R$ 100,00")
             intent.putExtra("CORTE_ID", 6L)
             startActivity(intent)
+            finish()
         }
 
         binding.avaliacoesTV.setOnClickListener {
             val intent = Intent(this, AvaliacaoActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         binding.detalhesTV.setOnClickListener {
             val intent = Intent(this, DetalhesActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }
